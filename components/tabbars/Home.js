@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableHighlight} from 'react-native';
 import Swiper from 'react-native-swiper';
 
 import {fetchRoot} from '../../app.json';
 
+import {Actions} from 'react-native-router-flux';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -53,38 +54,48 @@ export default class Home extends Component {
           </View>
           <View style={styles.box}>
             <Image
-              source={require('../../images/menu1.png')}
+              source={require('../../images/menu2.png')}
               style={{width: 60, height: 60}}></Image>
             <Text>Item</Text>
           </View>
           <View style={styles.box}>
             <Image
-              source={require('../../images/menu1.png')}
+              source={require('../../images/menu3.png')}
               style={{width: 60, height: 60}}></Image>
             <Text>Item</Text>
           </View>
           <View style={styles.box}>
             <Image
-              source={require('../../images/menu1.png')}
+              source={require('../../images/menu4.png')}
               style={{width: 60, height: 60}}></Image>
             <Text>Item</Text>
           </View>
+          <TouchableHighlight
+            style={styles.box}
+            onPress={this.goMovieListHandle}
+            underlayColor="white">
+            {/* 只能出现一个跟标签 */}
+            <View>
+              <Image
+                source={require('../../images/menu5.png')}
+                style={{width: 60, height: 60}}></Image>
+              <Text>MovieList</Text>
+            </View>
+          </TouchableHighlight>
           <View style={styles.box}>
             <Image
-              source={require('../../images/menu1.png')}
+              source={require('../../images/menu6.png')}
               style={{width: 60, height: 60}}></Image>
-            <Text>Item</Text>
-          </View>
-          <View style={styles.box}>
-            <Image
-              source={require('../../images/menu1.png')}
-              style={{width: 60, height: 60}}></Image>
-            <Text>Item</Text>
+            <Text>ContactUs</Text>
           </View>
         </View>
       </View>
     );
   }
+
+  goMovieListHandle = () => {
+    Actions.movielist({id: 10});
+  };
 }
 
 const styles = StyleSheet.create({

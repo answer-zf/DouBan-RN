@@ -8,7 +8,8 @@ import React, {Component} from 'react';
 import {Router, Stack, Scene} from 'react-native-router-flux';
 
 import App from './App';
-
+import MovieList from './components/movie/MovieList';
+import MovieDetail from './components/movie/MovieDetail';
 export default class Main extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +21,12 @@ export default class Main extends Component {
           {/* 第一个 Scene 默认展示的页面 */}
           {/* key属性： 路由规则的名称，使用 key 做编程式导航 */}
           <Scene key="app" component={App} title="App" hideNavBar={true} />
+          <Scene key="movielist" component={MovieList} title="MovieList" />
+          <Scene
+            key="moviedetail"
+            component={MovieDetail}
+            title="MovieDetail"
+          />
         </Stack>
       </Router>
     );

@@ -1,5 +1,6 @@
 {
   "name": "doubanRN",
   "displayName": "doubanRN",
-  "fetchRoot": "http://www.liulongbin.top:3005/"
+  "fetchRoot": "http://www.liulongbin.top:3005/",
+  "doubanAPI": "https://douban.uieee.com/v2/movie/"
 }
