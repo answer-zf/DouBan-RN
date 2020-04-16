@@ -136,6 +136,14 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            keyAlias 'zhoufeng'
+            keyPassword '18255163789'
+            storeFile file('app.keystore')
+            storePassword '18255163789'
+        }
+    }
     splits {
         abi {
             reset()
@@ -162,6 +170,7 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
 
